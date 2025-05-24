@@ -41,17 +41,17 @@ function Home() {
   const commodities = [
     {
       name: "Maize",
-      image: "src/images/maize plantation.jpg",
+      image: "/images/maize plantation.jpg",
       countries: ["Kenya", "Uganda", "Tanzania"]
     },
     {
       name: "Wheat",
-      image: "src/images/wheat.jpg",
+      image: "/images/wheat.jpg",
       countries: ["Ethiopia", "Kenya"]
     },
     {
       name: "Sorghum",
-      image: "src/images/products/sorghum (2).webp",
+      image: "/images/products/sorghum-(2).webp",
       countries: ["Kenya", "Uganda"]
     }
   ];
@@ -79,13 +79,13 @@ function Home() {
       varieties: [
         {
           name: "White Maize",
-          image: "src/images/products/white maize.webp",
+          image: "/images/products/white-maize.webp",
           description: "Premium quality white maize with high starch content, ideal for flour production.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         },
         {
           name: "Yellow Maize",
-          image: "src/images/products/yellow maize.webp",
+          image: "/images/products/yellow-maize.webp",
           description: "High-quality yellow maize with excellent nutritional value for animal feed.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         }
@@ -97,13 +97,13 @@ function Home() {
       varieties: [
         {
           name: "Gadam Sorghum",
-          image: "src/images/products/sorghum.webp",
+          image: "/images/products/sorghum.webp",
           description: "High-quality Gadam sorghum variety with excellent drought resistance and nutritional value.",
           packaging: ["45kg", "50kg", "90kg"]
         },
         {
           name: "Serena Sorghum",
-          image: "src/images/products/white sorghum.webp",
+          image: "/images/products/white-sorghum.webp",
           description: "Early-maturing Serena variety ideal for arid regions.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         }
@@ -115,13 +115,13 @@ function Home() {
       varieties: [
         {
           name: "Finger Millet",
-          image: "src/images/products/finger millet.webp",
+          image: "/images/products/finger-millet.webp",
           description: "Nutrient-dense finger millet (Uwele) for flour production.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         },
         {
           name: "Pearl Millet",
-          image: "src/images/products/Pearl millet.webp",
+          image: "/images/products/Pearl-millet.webp",
           description: "High-yield pearl millet for both human and animal consumption.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         }
@@ -130,14 +130,14 @@ function Home() {
     {
       category: "Cereals & Grains",
       name: "Wheat",
-      image: "src/images/wheat.jpg",
+      image: "/images/wheat.jpg",
       description: "Premium wheat grains for flour milling and animal feed.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
     {
       category: "Cereals & Grains",
       name: "Barley",
-      image: "src/images/products/barley.webp",
+      image: "/images/products/barley.webp",
       description: "Quality barley for brewing and animal feed production.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
@@ -147,13 +147,13 @@ function Home() {
       varieties: [
         {
           name: "Pishori Rice",
-          image: "src/images/products/pishori rice.webp",
+          image: "/images/products/pishori-rice.webp",
           description: "Aromatic Pishori rice with premium cooking qualities.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         },
         {
           name: "IR Rice Varieties",
-          image: "src/images/products/ir rice.webp",
+          image: "/images/products/ir-rice.webp",
           description: "High-yield IR rice varieties for bulk consumption.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         }
@@ -167,25 +167,25 @@ function Home() {
       varieties: [
         {
           name: "Red Kidney Beans",
-          image: "src/images/products/red kidney beans.webp",
+          image: "/images/products/red-kidney-beans.webp",
           description: "Nutrient-rich red kidney beans with excellent cooking qualities and high protein content.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         },
         {
           name: "Yellow Beans",
-          image: "src/images/products/yellow beans.webp",
+          image: "/images/products/yellow-beans.webp",
           description: "Nutritious yellow beans with high protein content.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         },
         {
           name: "Black Beans",
-          image: "src/images/products/black beans.webp",
+          image: "/images/products/black-beans.webp",
           description: "Flavorful black beans ideal for traditional dishes.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         },
         {
           name: "Rosecoco Beans",
-          image: "src/images/products/rose coco.webp",
+          image: "/images/products/rose-coco.webp",
           description: "Popular Rosecoco variety with distinctive speckled pattern.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         }
@@ -198,19 +198,19 @@ function Home() {
       varieties: [
         {
           name: "Green green grams",
-          image: "src/images/products/greengrams.webp",
+          image: "/images/products/greengrams.webp",
           description: "Nutrient-rich red kidney beans with excellent cooking qualities and high protein content.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         },
         {
           name: "Nillyon Green grams",
-          image: "src/images/products/beans-yellow.jpg",
+          image: "/images/products/beans-yellow.jpg",
           description: "Nutritious nillyon with high protein content.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         },
         {
           name: "Green grams Special",
-          image: "src/images/products/dengu special.webp",
+          image: "/images/products/dengu-special.webp",
           description: "Flavorful special green grams ideal for traditional dishes.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         }
@@ -219,21 +219,21 @@ function Home() {
     {
       category: "Pulses & Legumes",
       name: "Cowpeas",
-      image: "src/images/products/cow peas.webp",
+      image: "/images/products/cow-peas.webp",
       description: "Drought-resistant cowpeas with excellent nutritional value.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
     {
       category: "Pulses & Legumes",
       name: "Lentils",
-      image: "src/images/products/lentils.webp",
+      image: "/images/products/lentils.webp",
       description: "High-quality lentils for soups and stews.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
     {
       category: "Pulses & Legumes",
       name: "Pigeon Peas",
-      image: "src/images/products/Green Pigeon Peas.webp",
+      image: "/images/products/Green-Pigeon-Peas.webp",
       description: "Protein-rich pigeon peas for traditional dishes.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
@@ -245,13 +245,13 @@ function Home() {
       varieties: [
         {
           name: "Sifted Maize Flour",
-          image: "src/images/products/maize flour.webp",
+          image: "/images/products/maize-flour.webp",
           description: "Finely sifted maize flour with consistent texture, perfect for ugali and other traditional dishes.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         },
         {
           name: "Unga (Un-sifted)",
-          image: "src/images/products/unsifted flour.webp",
+          image: "/images/products/unsifted-flour.webp",
           description: "Traditional un-sifted maize flour.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         }
@@ -260,21 +260,21 @@ function Home() {
     {
       category: "Flour & Milled Products",
       name: "Sorghum Flour",
-      image: "src/images/products/sorghum flour.webp",
+      image: "/images/products/sorghum-flour.webp",
       description: "Nutritious sorghum flour for gluten-free baking.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
     {
       category: "Flour & Milled Products",
       name: "Millet Flour",
-      image: "src/images/products/millet flour.webp",
+      image: "/images/products/millet-flour.webp",
       description: "High-protein millet flour for nutritious baking.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
     {
       category: "Flour & Milled Products",
       name: "Composite Flour",
-      image: "src/images/composite-flour.jpg",
+      image: "/images/composite-flour.jpg",
       description: "Nutritious blend of maize and sorghum flour for enhanced taste and nutrition.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
@@ -283,49 +283,49 @@ function Home() {
     {
       category: "Animal Feed & Byproducts",
       name: "Maize Bran",
-      image: "src/images/products/maize bran.webp",
+      image: "/images/products/maize-bran.webp",
       description: "High-fiber maize bran for livestock feed.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
     {
       category: "Animal Feed & Byproducts",
       name: "Wheat Bran",
-      image: "src/images/products/wheat bran (2).webp",
+      image: "/images/products/wheat-bran-(2).webp",
       description: "High-fiber wheat bran excellent for livestock feed with good protein content.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
     {
       category: "Animal Feed & Byproducts",
       name: "Cottonseed Cake",
-      image: "src/images/products/cotton-cake.webp",
+      image: "/images/products/cotton-cake.webp",
       description: "Protein-rich cottonseed cake ideal for dairy cattle and poultry feed.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
     {
       category: "Animal Feed & Byproducts",
       name: "Sunflower Cake",
-      image: "src/images/products/sunflower_meal_with_hulls_04.webp",
+      image: "/images/products/sunflower_meal_with_hulls_04.webp",
       description: "High-protein sunflower residue for feed.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
     {
       category: "Animal Feed & Byproducts",
       name: "Soya Meal",
-      image: "src/images/products/soybean_meal.webp",
+      image: "/images/products/soybean_meal.webp",
       description: "Premium soya meal for livestock nutrition.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
     {
       category: "Animal Feed & Byproducts",
       name: "Dried Cassava Chips",
-      image: "src/images/products/dried cassava.webp",
+      image: "/images/products/dried-cassava.webp",
       description: "Sun-dried cassava chips with long shelf life, ideal for animal feed and industrial processing.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
     {
       category: "Animal Feed & Byproducts",
       name: "Brewer's Spent Grain",
-      image: "src/images/products/brewers grain.jpg",
+      image: "/images/products/brewers-grain.jpg",
       description: "Nutritious byproduct from brewing industry for animal feed.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
@@ -337,13 +337,13 @@ function Home() {
       varieties: [
         {
           name: "Raw Groundnuts",
-          image: "src/images/products/groundnuts.webp",
+          image: "/images/products/groundnuts.webp",
           description: "High-quality groundnuts with excellent oil content and flavor.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         },
         {
           name: "Roasted Groundnuts",
-          image: "src/images/products/Crushed Peanuts.webp",
+          image: "/images/products/Crushed-Peanuts.webp",
           description: "Premium roasted groundnuts for direct consumption.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         }
@@ -352,28 +352,28 @@ function Home() {
     {
       category: "Oil Seeds & Nuts",
       name: "Soybeans",
-      image: "src/images/products/Soybeans.webp",
+      image: "/images/products/Soybeans.webp",
       description: "Premium soybeans with high oil and protein content, suitable for oil extraction and animal feed.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
     {
       category: "Oil Seeds & Nuts",
       name: "Sunflower Seeds",
-      image: "src/images/products/sunflower seeds.webp",
+      image: "/images/products/sunflower-seeds.webp",
       description: "High-oil content sunflower seeds.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
     {
       category: "Oil Seeds & Nuts",
       name: "Simsim (Sesame)",
-      image: "src/images/products/sesame seeds.webp",
+      image: "/images/products/sesame-seeds.webp",
       description: "Quality sesame seeds for oil and culinary use.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
     {
       category: "Oil Seeds & Nuts",
       name: "Cottonseed",
-      image: "src/images/products/cotton seeds.webp",
+      image: "/images/products/cotton-seeds.webp",
       description: "High-quality cottonseed for oil extraction.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
@@ -382,21 +382,21 @@ function Home() {
     {
       category: "Fresh Dry Food Add-ons",
       name: "Dried Cassava",
-      image: "src/images/products/dried cassava.webp",
+      image: "/images/products/dried-cassava.webp",
       description: "Sun-dried cassava chips with long shelf life, ideal for animal feed and industrial processing.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
     {
       category: "Fresh Dry Food Add-ons",
       name: "Dried Arrowroots",
-      image: "src/images/products/dried arrowroots.webp",
+      image: "/images/products/dried-arrowroots.webp",
       description: "Premium dried arrowroots for processing.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
     {
       category: "Fresh Dry Food Add-ons",
       name: "Dried Bananas (Matoke)",
-      image: "src/images/products/dried-matoke.jpg",
+      image: "/images/products/dried-matoke.jpg",
       description: "Sun-dried matoke for flour production.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
@@ -405,7 +405,7 @@ function Home() {
     {
       category: "Packaged Branded Products",
       name: "Vittorios Animal Feed",
-      image: "src/images/animal-feed.jpg",
+      image: "/images/animal-feed.jpg",
       description: "Our premium branded animal feed formulated for optimal livestock nutrition and growth.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     }
@@ -534,7 +534,7 @@ function Home() {
               className="flex justify-center mb-6"
             >
               <img 
-                src="src/images/vittorios logo.jpg" 
+                src="/images/vittorios logo.jpg" 
                 alt="Vittorios Trades Logo" 
                 className="h-20 md:h-32 w-auto object-contain" 
               />
@@ -615,7 +615,7 @@ function Home() {
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative h-64 rounded-lg overflow-hidden">
                   <img
-                    src="src/images/legume sacks.jpg"
+                    src="/images/legume sacks.jpg"
                     alt="Commodity Trading"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -624,7 +624,7 @@ function Home() {
                 </div>
                 <div className="relative h-64 rounded-lg overflow-hidden mt-8">
                   <img
-                    src="src/images/logistics.jpg"
+                    src="/images/logistics.jpg"
                     alt="Logistics"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -633,7 +633,7 @@ function Home() {
                 </div>
                 <div className="relative h-64 rounded-lg overflow-hidden">
                   <img
-                    src="src/images/warehouse.jpg"
+                    src="/images/warehouse.jpg"
                     alt="Legumes"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -642,7 +642,7 @@ function Home() {
                 </div>
                 <div className="relative h-64 rounded-lg overflow-hidden mt-8">
                   <img
-                    src="src/images/EA flags.jpg"
+                    src="/images/EA flags.jpg"
                     alt="East Africa Trade"
                     className="w-full h-full object-cover"
                     loading="lazy"
@@ -889,7 +889,7 @@ function Home() {
                           >
                             <div className="relative h-40 overflow-hidden rounded-t-lg mb-3">
                               <img
-                                src={variety.image || 'src/images/placeholder.jpg'}
+                                src={variety.image || '/images/placeholder.jpg'}
                                 alt={variety.name || 'Unknown Variety'}
                                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                                 loading="lazy"
@@ -932,7 +932,7 @@ function Home() {
                         <div className="flex flex-col md:flex-row gap-4">
                           <div className="relative h-40 w-full md:w-1/3 overflow-hidden rounded-lg">
                             <img
-                              src={product.image || 'src/images/placeholder.jpg'}
+                              src={product.image || '/images/placeholder.jpg'}
                               alt={product.name || 'Unknown Product'}
                               className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                               loading="lazy"

@@ -374,9 +374,9 @@ const ProcessFlow = () => {
 const CompetitiveMatrix = () => {
   // Matrix data - customize with your actual advantages
   const competitors = [
-    { name: "Vittorios Logistics", logo: "src/images/vittorios logo.jpg" },
-    { name: "Standard Providers", logo: "competitor1.png" },
-    { name: "Regional Brokers", logo: "competitor2.png" }
+    { name: "Vittorios Logistics", logo: "/images/vittorios logo.jpg" },
+    { name: "Standard Providers", logo: "/images/products/starndar.jpg" },
+    { name: "Regional Brokers", logo: "/images/products/R-competitor.jpg" }
   ];
 
   const categories = [
@@ -641,13 +641,13 @@ const Testimonials = () => {
       quote: "Vittorios reduced our grain delivery delays by 40% and improved farmer payments by 25%. Their logistics network is unmatched in East Africa.",
       name: "James Yusuf",
       title: "Client Uganda",
-      avatar: "src/images/manager 1.jpg"
+      avatar: "/images/manager 1.jpg"
     },
     {
       quote: "As a smallholder farmer, the aggregation project doubled my sorghum income. They provide seeds, training, and guaranteed market access.",
       name: "Mary Atieno",
       title: "Sorghum Farmer",
-      avatar: "src/images/fenale farmer.jpg"
+      avatar: "/images/fenale farmer.jpg"
     }
   ];
 
@@ -723,7 +723,7 @@ const Testimonials = () => {
 // =================================================================
 const MegaCTA = () => {
   return (
-    <section className="relative py-28 overflow-hidden bg-[url('src/images/legumes.jpg')] bg-cover bg-center">
+    <section className="relative py-28 overflow-hidden bg-[url('/images/legumes.jpg')] bg-cover bg-center">
       {/* Grain Particle Animation Background */}
       <div className="absolute inset-0 bg-charcoalBlack/80"></div>
       

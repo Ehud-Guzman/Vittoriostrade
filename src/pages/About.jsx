@@ -25,7 +25,7 @@ const VisionHero = () => {
         >
           <div className="relative w-full max-w-md h-96 lg:h-[500px]">
             <img
-              src="src/images/ceo.jpg"
+              src="/images/ceo.jpg"
               alt="Victor Ndesh - Founder"
               className="absolute inset-0 w-full h-full object-cover rounded-xl contrast-110 brightness-90 border-4 border-goldenWheat/50 shadow-2xl"
             />
@@ -227,28 +227,28 @@ const ServicesGallery = () => {
       title: "Commodity Trading",
       description: "Sourcing and supplying cereals (maize, wheat, rice) across East Africa",
       icon: <FaSeedling className="text-4xl" />,
-      image: "src/images/legume sacks.jpg",
+      image: "/images/legume sacks.jpg",
       stats: "10,000+ tons moved monthly"
     },
     {
       title: "Regional Distribution",
       description: "Coordinating transportation and logistics across borders",
       icon: <FaTruck className="text-4xl" />,
-      image: "src/images/maize-farmer.jpg",
+      image: "/images/maize-farmer.jpg",
       stats: "Covering 5+ countries"
     },
     {
       title: "Quality Assurance",
       description: "Ensuring compliance with international market standards",
       icon: <FaBalanceScale className="text-4xl" />,
-      image: "src/images/quality control.jpg",
+      image: "/images/quality control.jpg",
       stats: "99.8% satisfaction rate"
     },
     {
       title: "Storage Solutions",
       description: "Climate-controlled warehousing for agricultural commodities",
       icon: <FaWarehouse className="text-4xl" />,
-      image: "src/images/warehouse.jpg",
+      image: "/images/warehouse.jpg",
       stats: "50,000+ sq ft capacity"
     }
   ];
@@ -416,7 +416,7 @@ const TeamSection = () => {
           >
             <div className="relative w-full max-w-sm">
               <img
-                src="src/images/ceo_2-removebg-preview.png"
+                src="/images/ceo_2-removebg-preview.png"
                 alt="Victor Ndesh"
                 className="w-full h-auto rounded-xl border-4 border-goldenWheat/50 shadow-2xl"
               />
