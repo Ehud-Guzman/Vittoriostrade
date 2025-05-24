@@ -1,0 +1,434 @@
+/* ==========================================================================
+   1. Design Tokens - Colors, Typography, and Global Variables
+   ========================================================================== */
+:root {
+  --golden-wheat: #D4AF37;
+  --warm-brown: #8B5E34;
+  --charcoal-black: #121212;
+  --deep-green: #14532D;
+  --neutral-sand: #F5F0E1;
+  --glass-bg: rgba(18, 18, 18, 0.7); /* Fallback for glass effect */
+  --glass-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.3);
+  --transition-fast: 200ms ease;
+  --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   2. Global Layout - Root Container and Base Styles
+   ========================================================================== */
+#root {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--charcoal-black);
+  color: var(--neutral-sand);
+  font-family: 'Inter', system-ui, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Reset for consistency */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   3. Typography - Headings, Paragraphs, and Links
+   ========================================================================== */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--golden-wheat);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+  line-height: 1.6;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+}
+
+a {
+  color: var(--golden-wheat);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--warm-brown);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--golden-wheat), var(--warm-brown));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ==========================================================================
+   4. Reusable Components - Buttons, Cards, and Inputs
+   ========================================================================== */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(90deg, var(--golden-wheat), var(--warm-brown));
+  color: var(--charcoal-black);
+  font-weight: 600;
+  border-radius: 9999px;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:focus {
+  outline: 2px solid var(--golden-wheat);
+  outline-offset: 2px;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--golden-wheat);
+  color: var(--golden-wheat);
+  font-weight: 600;
+  border-radius: 9999px;
+  background: transparent;
+  transition: background var(--transition-smooth), color var(--transition-smooth);
+}
+
+.btn-secondary:hover {
+  background: var(--golden-wheat);
+  color: var(--charcoal-black);
+}
+
+.btn-secondary:focus {
+  outline: 2px solid var(--golden-wheat);
+  outline-offset: 2px;
+}
+
+.card {
+  background: var(--glass-bg);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--glass-shadow);
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--golden-wheat);
+}
+
+/* Use Tailwind backdrop-blur with fallback */
+@supports (backdrop-filter: blur(10px)) {
+  .card {
+    background: rgba(18, 18, 18, 0.4);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--charcoal-black);
+  border: 1px solid rgba(139, 94, 52, 0.3);
+  border-radius: 0.5rem;
+  color: var(--neutral-sand);
+  transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  border-color: var(--golden-wheat);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+  outline: none;
+}
+
+/* ==========================================================================
+   5. Hero Sections - Parallax and Gradient Effects
+   ========================================================================== */
+.hero {
+  position: relative;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, var(--deep-green), var(--charcoal-black));
+  opacity: 0.7;
+  z-index: 0;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: 0.2;
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-bg {
+    transform: translateZ(0) scale(1.1);
+  }
+}
+
+/* ==========================================================================
+   6. Swiper Slider Customizations
+   ========================================================================== */
+.swiper {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  background: var(--charcoal-black);
+}
+
+.swiper-pagination-bullet {
+  background: var(--golden-wheat);
+  opacity: 0.5;
+  width: 12px;
+  height: 12px;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
+   7. Animations and Micro-Interactions
+   ========================================================================== */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.pulse {
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    animation: none;
+  }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-animate {
+  background: linear-gradient(45deg, var(--golden-wheat), var(--warm-brown), var(--deep-green));
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.scale-hover {
+  transition: transform var(--transition-smooth);
+}
+
+.scale-hover:hover {
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+   8. Product Catalogue - Grid and Filter Styles
+   ========================================================================== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.product-card img {
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.1);
+}
+
+.filter-container {
+  background: var(--glass-bg);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: var(--glass-shadow);
+}
+
+@supports (backdrop-filter: blur(10px)) {
+  .filter-container {
+    background: rgba(18, 18, 18, 0.4);
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* ==========================================================================
+   9. Contact Form and Map
+   ========================================================================== */
+.contact-form {
+  background: var(--glass-bg);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--glass-shadow);
+}
+
+@supports (backdrop-filter: blur(10px)) {
+  .contact-form {
+    background: rgba(18, 18, 18, 0.4);
+    backdrop-filter: blur(10px);
+  }
+}
+
+.map-container {
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid var(--golden-wheat);
+}
+
+.map-container iframe {
+  transition: opacity 0.3s ease;
+}
+
+.map-container.loading::before {
+  content: 'Loading map...';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--charcoal-black);
+  color: var(--golden-wheat);
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   10. Accessibility and Reduced Motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .scale-hover:hover, .hero-bg, .pulse, .gradient-animate {
+    animation: none;
+    transform: none;
+    transition: none;
+  }
+}
+
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--golden-wheat);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   11. Logo Styling - Vittorios Trades Specific
+   ========================================================================== */
+.vittorios-logo {
+  height: 5rem;
+  width: auto;
+  transition: transform var(--transition-smooth), filter var(--transition-smooth);
+}
+
+.vittorios-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 0.5rem var(--golden-wheat));
+}
+
+@media (min-width: 768px) {
+  .vittorios-logo {
+    height: 8rem;
+  }
+}
+
+/* ==========================================================================
+   12. Utility Classes - Reusable Modifiers
+   ========================================================================== */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, var(--golden-wheat), var(--warm-brown));
+  margin: 2rem 0;
+}
+
+.glass-effect {
+  background: var(--glass-bg);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: var(--glass-shadow);
+}
+
+@supports (backdrop-filter: blur(10px)) {
+  .glass-effect {
+    background: rgba(18, 18, 18, 0.4);
+    backdrop-filter: blur(10px);
+  }
+}
+
+/* ==========================================================================
+   13. Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 0.5rem 1rem;
+  }
+}
