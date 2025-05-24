@@ -26,7 +26,7 @@ const VisionHero = () => {
           <div className="relative w-full max-w-md h-96 lg:h-[500px]">
             <img
               src="/images/ceo.jpg"
-              alt="Victor Ndesh - Founder"
+              alt="Victor Kamau - Founder"
               className="absolute inset-0 w-full h-full object-cover rounded-xl contrast-110 brightness-90 border-4 border-goldenWheat/50 shadow-2xl"
             />
             <motion.div
@@ -36,7 +36,7 @@ const VisionHero = () => {
             />
             <div className="absolute -bottom-6 -right-6 bg-charcoalBlack/90 p-4 rounded-lg border-l-4 border-goldenWheat shadow-lg">
               <p className="text-goldenWheat font-serif italic">"Building bridges across East Africa through reliable trade"</p>
-              <p className="text-neutralSand text-sm mt-2">- Victor Ndesh, Founder</p>
+              <p className="text-neutralSand text-sm mt-2">- Victor Kamau, Founder</p>
             </div>
           </div>
         </motion.div>
@@ -417,11 +417,11 @@ const TeamSection = () => {
             <div className="relative w-full max-w-sm">
               <img
                 src="/images/ceo_2-removebg-preview.png"
-                alt="Victor Ndesh"
+                alt="Victor Kamau"
                 className="w-full h-auto rounded-xl border-4 border-goldenWheat/50 shadow-2xl"
               />
               <div className="absolute -bottom-6 -right-6 bg-charcoalBlack/90 p-4 rounded-lg border-l-4 border-goldenWheat shadow-lg">
-                <p className="text-goldenWheat font-bold">Victor Ndesh</p>
+                <p className="text-goldenWheat font-bold">Victor Kamau</p>
                 <p className="text-neutralSand text-sm">Founder & CEO</p>
               </div>
             </div>
