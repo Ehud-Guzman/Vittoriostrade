@@ -4,11 +4,12 @@ import { FaPhone, FaMapMarkerAlt, FaClock, FaWhatsapp, FaTruck, FaSeedling, FaCa
 import { SiGooglemaps } from "react-icons/si";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import emailjs from "@emailjs/browser";
 import "swiper/css";
 import "swiper/css/pagination";
 
 const ContactsPage = () => {
-  // State for form and calendar
+  // State for form, calendar, and submission status
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -19,6 +20,7 @@ const ContactsPage = () => {
   const [showCalendar, setShowCalendar] = useState(false);
   const [mapLoaded, setMapLoaded] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState(null);
+  const [submissionStatus, setSubmissionStatus] = useState(null); // New state for feedback
 
   // Testimonials data
   const testimonials = [
@@ -54,11 +56,35 @@ const ContactsPage = () => {
     }
   ];
 
-  const handleSubmit = (e) => {
+  // Initialize EmailJS with your Public Key (replace with your actual Public Key)
+  // Replace 'YOUR_PUBLIC_KEY' with your EmailJS Public Key
+  // emailjs.init('YOUR_PUBLIC_KEY');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    console.log('Form submitted:', formData);
-    // Consider adding a success message
+    setSubmissionStatus('sending');
+
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        'service_glh0yoh', // Replace with your EmailJS Service ID
+        'template_8919t07', // Replace with your EmailJS Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        'mu8JNmKu-gMTErqQ2' // Replace with your EmailJS Public Key
+      );
+
+      setSubmissionStatus('success');
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' }); // Reset form
+    } catch (error) {
+      console.error('EmailJS error:', error);
+      setSubmissionStatus('error');
+    }
   };
 
   const toggleFaq = (index) => {
@@ -141,7 +167,7 @@ const ContactsPage = () => {
               <div className="space-y-2">
                 <p><a href="mailto:vittoriotrades@gmail.com" className="hover:text-goldenWheat transition-colors">vittoriotrades@gmail.com</a></p>
                 <p><a href="tel:+254799031449" className="hover:text-goldenWheat transition-colors">+254 799 031449</a></p>
-                 <p><a href="tel:+256 7664216176" className="hover:text-goldenWheat transition-colors">+256 7664216176</a></p>
+                <p><a href="tel:+2567664216176" className="hover:text-goldenWheat transition-colors">+256 7664216176</a></p>
               </div>
             </motion.div>
 
@@ -248,6 +274,17 @@ const ContactsPage = () => {
               <h2 className="text-3xl font-bold mb-2 text-goldenWheat">Send Us a Message</h2>
               <p className="text-neutralSand/80 mb-8">We typically respond within 2 business hours</p>
               
+              {/* Submission Feedback */}
+              {submissionStatus === 'sending' && (
+                <p className="text-yellow-400 mb-4">Sending your message...</p>
+              )}
+              {submissionStatus === 'success' && (
+                <p className="text-green-400 mb-4">Message sent successfully! We'll get back to you soon.</p>
+              )}
+              {submissionStatus === 'error' && (
+                <p className="text-red-400 mb-4">Failed to send message. Please try again or contact us directly at vittoriotrades@gmail.com.</p>
+              )}
+
               <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -319,6 +356,7 @@ const ContactsPage = () => {
                   whileTap={{ scale: 0.98 }}
                   type="submit"
                   className="w-full bg-gradient-to-r from-goldenWheat to-warmBrown text-charcoalBlack font-bold py-4 rounded-lg flex items-center justify-center gap-2"
+                  disabled={submissionStatus === 'sending'}
                 >
                   Send Message <FaChevronRight />
                 </motion.button>
@@ -508,7 +546,6 @@ const ContactsPage = () => {
                     className="bg-charcoalBlack/80 hover:bg-goldenWheat/10 border border-goldenWheat/20 p-3 rounded-lg transition-colors"
                   >
                     <span className="sr-only">{platform}</span>
-                    {/* Replace with actual icons */}
                     <div className="w-5 h-5 bg-current opacity-70 rounded-sm" />
                   </motion.a>
                 ))}
