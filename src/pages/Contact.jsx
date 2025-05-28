@@ -165,7 +165,7 @@ const ContactsPage = () => {
               <h3 className="text-2xl font-bold mb-4">General Inquiries</h3>
               <p className="mb-6 text-neutralSand/80">For all business communications</p>
               <div className="space-y-2">
-                <p><a href="mailto:vittoriotrades@gmail.com" className="hover:text-goldenWheat transition-colors">vittoriotrades@gmail.com</a></p>
+                <p><a href="mailto:vittoriostrades@gmail.com" className="hover:text-goldenWheat transition-colors">vittoriotrades@gmail.com</a></p>
                 <p><a href="tel:+254799031449" className="hover:text-goldenWheat transition-colors">+254 799 031449</a></p>
                 <p><a href="tel:+2567664216176" className="hover:text-goldenWheat transition-colors">+256 7664216176</a></p>
               </div>
