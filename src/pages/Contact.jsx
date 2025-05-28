@@ -60,32 +60,32 @@ const ContactsPage = () => {
   // Replace 'YOUR_PUBLIC_KEY' with your EmailJS Public Key
   // emailjs.init('YOUR_PUBLIC_KEY');
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setSubmissionStatus('sending');
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setSubmissionStatus('sending');
 
-    try {
-      // Send email using EmailJS
-      await emailjs.send(
-        'service_glh0yoh', // Replace with your EmailJS Service ID
-        'template_8919t07', // Replace with your EmailJS Template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          subject: formData.subject,
-          message: formData.message,
-        },
-        'mu8JNmKu-gMTErqQ2' // Replace with your EmailJS Public Key
-      );
-
-      setSubmissionStatus('success');
-      setFormData({ name: '', email: '', phone: '', subject: '', message: '' }); // Reset form
-    } catch (error) {
-      console.error('EmailJS error:', error);
-      setSubmissionStatus('error');
-    }
-  };
+  try {
+    const response = await emailjs.send(
+      'service_glh0yoh', // Replace with your actual Service ID
+      'template_8919t07', // Replace with your actual Template ID
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        subject: formData.subject,
+        message: formData.message,
+      },
+      'mu8JNmKu-gMTErqQ2' // Replace with your actual Public Key
+    );
+    
+    console.log('Email sent successfully:', response);
+    setSubmissionStatus('success');
+    setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
+  } catch (error) {
+    console.error('Email sending failed:', error);
+    setSubmissionStatus('error');
+  }
+};
 
   const toggleFaq = (index) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
