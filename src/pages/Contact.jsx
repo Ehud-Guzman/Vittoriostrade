@@ -244,7 +244,7 @@ const ContactsPage = () => {
                 href="tel:+254799031449" 
                 className="px-8 py-4 bg-rose-700 hover:bg-rose-600 text-white font-bold rounded-full text-xl flex items-center gap-3 transition-colors"
               >
-                <FaPhone /> +254 799 031449 (Press 2)
+                <FaPhone /> +254 799 031449 
               </a>
               <a 
                 href="https://wa.me/254799031449" 
