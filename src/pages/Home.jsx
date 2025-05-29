@@ -536,7 +536,7 @@ function Home() {
               <img 
                 src="/images/vittorios logo.jpg" 
                 alt="Vittorios Trades Logo" 
-                className="h-20 md:h-32 w-auto object-contain" 
+                 className="h-24 md:h-36 w-auto object-contain brightness-150" 
               />
             </motion.div>
 

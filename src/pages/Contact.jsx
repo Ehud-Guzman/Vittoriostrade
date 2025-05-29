@@ -332,10 +332,10 @@ const handleSubmit = async (e) => {
                     className="w-full bg-charcoalBlack border border-warmBrown/30 focus:border-goldenWheat/50 rounded-lg px-4 py-3 text-neutralSand outline-none transition-colors"
                   >
                     <option value="">Select an option</option>
-                    <option value="trading">Commodity Trading Inquiry</option>
-                    <option value="logistics">Logistics Support</option>
-                    <option value="partnership">Partnership Opportunity</option>
-                    <option value="other">Other</option>
+                    <option value="Trading">Commodity Trading Inquiry</option>
+                    <option value="Logistics">Logistics Support</option>
+                    <option value="Partnership">Partnership Opportunity</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
 
