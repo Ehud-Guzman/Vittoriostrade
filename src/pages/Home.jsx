@@ -198,13 +198,13 @@ function Home() {
       varieties: [
         {
           name: "Green green grams",
-          image: "/images/products/greengrams.webp",
+          image: "",
           description: "Nutrient-rich red kidney beans with excellent cooking qualities and high protein content.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         },
         {
           name: "Nillyon Green grams",
-          image: "/images/products/beans-yellow.jpg",
+          image: "/images/products/greengrams.webp",
           description: "Nutritious nillyon with high protein content.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         },
@@ -337,7 +337,7 @@ function Home() {
       varieties: [
         {
           name: "Raw Groundnuts",
-          image: "/images/products/groundnuts.webp",
+          image: "/images/products/RedGroundnuts_1.webp",
           description: "High-quality groundnuts with excellent oil content and flavor.",
           packaging: ["45kg", "50kg", "90kg", "Bulk"]
         },
@@ -396,7 +396,7 @@ function Home() {
     {
       category: "Fresh Dry Food Add-ons",
       name: "Dried Bananas (Matoke)",
-      image: "/images/products/dried-matoke.jpg",
+      image: "/images/products/dried bananas.jpeg",
       description: "Sun-dried matoke for flour production.",
       packaging: ["45kg", "50kg", "90kg", "Bulk"]
     },
