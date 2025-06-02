@@ -416,7 +416,7 @@ const TeamSection = () => {
           >
             <div className="relative w-full max-w-sm">
               <img
-                src="/images/ceo_2-removebg-preview.png"
+                src="/images/Kamau.jpg"
                 alt="Victor Kamau"
                 className="w-full h-auto rounded-xl border-4 border-goldenWheat/50 shadow-2xl"
               />
