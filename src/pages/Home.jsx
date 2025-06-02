@@ -547,20 +547,7 @@ function Home() {
               Premier logistics and commodity trading solutions across East Africa
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-gradient-to-r from-goldenWheat to-warmBrown text-charcoalBlack font-bold rounded-full"
-              >
-                Our Services
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 border-2 border-goldenWheat text-goldenWheat font-bold rounded-full"
-              >
-                Contact Us
-              </motion.button>
+         
             </div>
           </motion.div>
         </div>
@@ -597,13 +584,7 @@ function Home() {
                 With our regional expertise and strong network, we provide efficient, cost-effective, and
                 seamless solutions for commodity trading and supply chain management.
               </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-2 border-2 border-goldenWheat text-goldenWheat font-bold rounded-full flex items-center gap-2"
-              >
-                Learn More <FaArrowRight />
-              </motion.button>
+           
             </motion.div>
             <motion.div
               className="lg:w-1/2 relative"
@@ -918,12 +899,7 @@ function Home() {
                                 ))}
                               </div>
                             </div>
-                            <motion.button
-                              whileTap={{ scale: 0.97 }}
-                              className="w-full bg-gradient-to-r from-goldenWheat/80 to-warmBrown/80 text-charcoalBlack font-medium py-1.5 rounded text-xs"
-                            >
-                              Request Quote
-                            </motion.button>
+                         
                           </div>
                         ))
                     ) : (
@@ -962,13 +938,7 @@ function Home() {
                                 ))}
                               </div>
                             </div>
-                            <motion.button
-                              whileHover={{ scale: 1.03 }}
-                              whileTap={{ scale: 0.97 }}
-                              className="w-full md:w-auto bg-gradient-to-r from-goldenWheat/80 to-warmBrown/80 text-charcoalBlack font-medium py-1.5 px-4 rounded text-xs"
-                            >
-                              Request Quote
-                            </motion.button>
+                            
                           </div>
                         </div>
                       </div>
@@ -1126,20 +1096,8 @@ function Home() {
               Partner with Vittorios Trades for reliable, efficient, and cost-effective logistics and commodity trading solutions.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-gradient-to-r from-goldenWheat to-warmBrown text-charcoalBlack font-bold rounded-full"
-              >
-                Get Started Today
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 border-2 border-goldenWheat text-goldenWheat font-bold rounded-full flex items-center justify-center gap-2"
-              >
-                <FaWhatsapp /> Chat Now
-              </motion.button>
+         
+          
             </div>
           </div>
         </div>

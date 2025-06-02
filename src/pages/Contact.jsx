@@ -134,13 +134,7 @@ const handleSubmit = async (e) => {
           <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8">
             Reach out for logistics solutions, trade inquiries, or strategic partnerships across East Africa
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-gradient-to-r from-goldenWheat to-warmBrown text-charcoalBlack font-bold rounded-full"
-          >
-            Get in Touch <FaChevronRight className="inline ml-2"/>
-          </motion.button>
+       
         </motion.div>
       </section>
 
@@ -418,13 +412,7 @@ const handleSubmit = async (e) => {
                   <div className="font-bold text-goldenWheat">{testimonial.name}</div>
                   <div className="text-neutralSand/80">{testimonial.role}</div>
                   <div className="mt-8">
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="px-8 py-3 bg-gradient-to-r from-goldenWheat/80 to-warmBrown/80 text-charcoalBlack font-bold rounded-full"
-                    >
-                      Start Your Partnership <FaChevronRight className="inline ml-2"/>
-                    </motion.button>
+                   
                   </div>
                 </div>
               </SwiperSlide>

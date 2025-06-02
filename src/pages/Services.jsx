@@ -43,31 +43,7 @@ const HeroSection = () => {
           End-to-end solutions for agricultural commodity trading across East Africa
         </p>
         
-        {/* Animated CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4">
-          <motion.button
-            whileHover={{ 
-              scale: 1.05, 
-              boxShadow: "0 0 20px rgba(212, 175, 55, 0.5)",
-              background: "linear-gradient(to right, #D4AF37, #8B5E34)"
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-gradient-to-r from-goldenWheat to-warmBrown text-charcoalBlack font-bold rounded-full text-lg"
-          >
-            Get a Custom Quote
-          </motion.button>
-          <motion.button
-            whileHover={{ 
-              scale: 1.05, 
-              backgroundColor: "#14532D",
-              borderColor: "#F5F0E1"
-            }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 border-2 border-goldenWheat text-goldenWheat font-bold rounded-full text-lg"
-          >
-            Explore Services
-          </motion.button>
-        </div>
+    
         
         {/* Bouncing Scroll Indicator */}
         <motion.div
@@ -767,29 +743,7 @@ const MegaCTA = () => {
             Transport slots available this month for bulk grain deliveries
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.button
-              whileHover={{ 
-                scale: 1.05, 
-                boxShadow: "0 0 30px rgba(212, 175, 55, 0.7)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 bg-goldenWheat text-charcoalBlack font-bold rounded-full text-lg flex items-center justify-center gap-2 mx-auto sm:mx-0"
-            >
-              <FaPhone /> Book Discovery Call
-            </motion.button>
-            
-            <motion.button
-              whileHover={{ 
-                scale: 1.05,
-                backgroundColor: "rgba(20, 83, 45, 0.9)"
-              }}
-              whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 bg-transparent border-2 border-goldenWheat text-goldenWheat font-bold rounded-full text-lg flex items-center justify-center gap-2 mx-auto sm:mx-0"
-            >
-              <FaFileDownload /> Download Price List
-            </motion.button>
-          </div>
+       
           
           <div className="mt-8 flex flex-wrap justify-center gap-6 text-sm">
             <div className="flex items-center gap-2 bg-charcoalBlack/30 px-3 py-1.5 rounded-full">
