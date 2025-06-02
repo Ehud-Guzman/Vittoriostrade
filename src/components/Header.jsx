@@ -122,12 +122,7 @@ function Header() {
                 </NavLink>
               </motion.div>
             ))}
-            <motion.button
-              whileTap={{ scale: 0.95 }}
-              className="w-full mt-4 px-6 py-3 rounded-full text-base font-bold bg-goldenWheat text-charcoalBlack hover:bg-deepGreen hover:text-neutralSand transition-all duration-300"
-            >
-              Get Quote
-            </motion.button>
+           
           </motion.div>
         )}
       </div>
