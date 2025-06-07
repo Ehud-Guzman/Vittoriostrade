@@ -186,15 +186,36 @@ function Footer() {
             </div>
           </div>
 
-          {/* Creator credit */}
-          <div className="pt-6 border-t border-warmBrown border-opacity-30">
-            <p className="text-neutralSand text-xs text-center mb-4 md:mb-0">
-              Website Created by <span className="font-semibold">GlimmerInk Creations</span> |{' '}
-              <a href="tel:+254746527253" className="hover:text-goldenWheat">
-                +254 746 527 253
-              </a>
-            </p>
-          </div>
+         {/* Creator credit */}
+<div className="pt-6 border-t border-warmBrown border-opacity-30">
+  <p className="text-neutralSand text-xs text-center mb-4 md:mb-0">
+    Website Created by{' '}
+    <a 
+      href="https://glimmerink.netlify.app" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="font-semibold hover:text-goldenWheat"
+    >
+      GlimmerInk Creations
+    </a>{' '}
+    |{' '}
+    <a 
+      href="tel:+254746527253" 
+      className="hover:text-goldenWheat"
+    >
+      +254 746 527 253
+    </a>{' '}
+    |{' '}
+    <a 
+      href="https://wa.me/254746527253" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="hover:text-goldenWheat"
+    >
+      WhatsApp
+    </a>
+  </p>
+</div>
         </div>
       </div>
     </motion.footer>
