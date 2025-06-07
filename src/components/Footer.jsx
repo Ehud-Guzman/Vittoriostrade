@@ -26,8 +26,8 @@ function Footer() {
   const contactInfo = [
     { icon: <FaMapMarkerAlt />, text: "P.O. Box 41, Bungoma" },
     { icon: <FaPhone />, text: "+254 799031449" },
-      { icon: <FaPhone />, text: "+250 795585322" },
-        { icon: <FaPhone />, text: "+256 764216176" },
+    { icon: <FaPhone />, text: "+250 795585322" },
+    { icon: <FaPhone />, text: "+256 764216176" },
     { icon: <FaEnvelope />, text: "vittoriostrades@gmail.com" }
   ];
 
@@ -85,7 +85,7 @@ function Footer() {
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     <Link
-                      href={link.path}
+                      to={link.path}
                       className="text-neutralSand hover:text-goldenWheat text-sm transition-colors duration-300 flex items-center"
                     >
                       <span className="w-2 h-2 bg-goldenWheat rounded-full mr-2"></span>
@@ -173,13 +173,13 @@ function Footer() {
                 © {currentYear} Vittorios Trades. All rights reserved.
               </p>
               <div className="flex space-x-6">
-                <Link href="#" className="text-neutralSand hover:text-goldenWheat text-sm transition-colors duration-300">
+                <Link to="/privacy" className="text-neutralSand hover:text-goldenWheat text-sm transition-colors duration-300">
                   Privacy Policy
                 </Link>
-                <Link href="#" className="text-neutralSand hover:text-goldenWheat text-sm transition-colors duration-300">
+                <Link to="/terms" className="text-neutralSand hover:text-goldenWheat text-sm transition-colors duration-300">
                   Terms of Service
                 </Link>
-                <Link href="#" className="text-neutralSand hover:text-goldenWheat text-sm transition-colors duration-300">
+                <Link to="/sitemap" className="text-neutralSand hover:text-goldenWheat text-sm transition-colors duration-300">
                   Sitemap
                 </Link>
               </div>
