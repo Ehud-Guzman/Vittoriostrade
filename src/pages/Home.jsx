@@ -1,40 +1,55 @@
-import { motion } from 'framer-motion';
-import { useState, useMemo, useEffect } from 'react';
-import { FaArrowRight, FaTruck, FaWarehouse, FaGlobeAfrica, FaChartLine, FaHandshake, FaSearch, FaPhone, FaMapMarkerAlt, FaClock, FaWhatsapp } from 'react-icons/fa';
-import { SiGooglemaps } from 'react-icons/si';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
+import { motion } from "framer-motion";
+import { useState, useMemo, useEffect } from "react";
+import {
+  FaArrowRight,
+  FaTruck,
+  FaWarehouse,
+  FaGlobeAfrica,
+  FaChartLine,
+  FaHandshake,
+  FaSearch,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaClock,
+  FaWhatsapp,
+} from "react-icons/fa";
+import { SiGooglemaps } from "react-icons/si";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 
 function Home() {
   // Original Data
   const services = [
     {
       title: "Commodity Trading",
-      description: "Sourcing and supplying premium cereals including maize, wheat, rice, and sorghum across East Africa.",
+      description:
+        "Sourcing and supplying premium cereals including maize, wheat, rice, and sorghum across East Africa.",
       icon: <FaWarehouse className="text-4xl text-goldenWheat" />,
-      bg: "from-deepGreen/10 to-deepGreen/5"
+      bg: "from-deepGreen/10 to-deepGreen/5",
     },
     {
       title: "Regional Logistics",
-      description: "Efficient transportation and distribution solutions tailored for East African markets.",
+      description:
+        "Efficient transportation and distribution solutions tailored for East African markets.",
       icon: <FaTruck className="text-4xl text-goldenWheat" />,
-      bg: "from-warmBrown/10 to-warmBrown/5"
+      bg: "from-warmBrown/10 to-warmBrown/5",
     },
     {
       title: "Import/Export Solutions",
-      description: "End-to-end supply chain management for seamless cross-border trade operations.",
+      description:
+        "End-to-end supply chain management for seamless cross-border trade operations.",
       icon: <FaGlobeAfrica className="text-4xl text-goldenWheat" />,
-      bg: "from-charcoalBlack/10 to-charcoalBlack/5"
-    }
+      bg: "from-charcoalBlack/10 to-charcoalBlack/5",
+    },
   ];
 
   const stats = [
     { value: "100+", label: "Satisfied Clients" },
     { value: "5+", label: "Years Experience" },
     { value: "10K+", label: "Tons Moved Annually" },
-    { value: "3", label: "Countries Served" }
+    { value: "3", label: "Countries Served" },
   ];
 
   // Commodities Data
@@ -42,18 +57,18 @@ function Home() {
     {
       name: "Maize",
       image: "/images/maize plantation.jpg",
-      countries: ["Kenya", "Uganda", "Tanzania"]
+      countries: ["Kenya", "Uganda", "Tanzania"],
     },
     {
       name: "Wheat",
       image: "/images/wheat.jpg",
-      countries: ["Ethiopia", "Kenya"]
+      countries: ["Ethiopia", "Kenya"],
     },
     {
       name: "Sorghum",
       image: "/images/products/sorghum-(2).webp",
-      countries: ["Kenya", "Uganda"]
-    }
+      countries: ["Kenya", "Uganda"],
+    },
   ];
 
   // Product Catalogue Data
@@ -65,7 +80,7 @@ function Home() {
     "Animal Feed & Byproducts",
     "Oil Seeds & Nuts",
     "Fresh Dry Food Add-ons",
-    "Packaged Branded Products"
+    "Packaged Branded Products",
   ];
 
   const packagingOptions = ["All", "45kg", "50kg", "90kg", "100kg", "Bulk"];
@@ -80,16 +95,18 @@ function Home() {
         {
           name: "White Maize",
           image: "/images/products/white-maize.webp",
-          description: "Premium quality white maize with high starch content, ideal for flour production.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
+          description:
+            "Premium quality white maize with high starch content, ideal for flour production.",
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
         },
         {
           name: "Yellow Maize",
           image: "/images/products/yellow-maize.webp",
-          description: "High-quality yellow maize with excellent nutritional value for animal feed.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
-        }
-      ]
+          description:
+            "High-quality yellow maize with excellent nutritional value for animal feed.",
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
+        },
+      ],
     },
     {
       category: "Cereals & Grains",
@@ -98,16 +115,17 @@ function Home() {
         {
           name: "Gadam Sorghum",
           image: "/images/products/sorghum.webp",
-          description: "High-quality Gadam sorghum variety with excellent drought resistance and nutritional value.",
-          packaging: ["45kg", "50kg", "90kg"]
+          description:
+            "High-quality Gadam sorghum variety with excellent drought resistance and nutritional value.",
+          packaging: ["45kg", "50kg", "90kg"],
         },
         {
           name: "Serena Sorghum",
           image: "/images/products/white-sorghum.webp",
           description: "Early-maturing Serena variety ideal for arid regions.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
-        }
-      ]
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
+        },
+      ],
     },
     {
       category: "Cereals & Grains",
@@ -116,30 +134,32 @@ function Home() {
         {
           name: "Finger Millet",
           image: "/images/products/finger-millet.webp",
-          description: "Nutrient-dense finger millet (Uwele) for flour production.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
+          description:
+            "Nutrient-dense finger millet (Uwele) for flour production.",
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
         },
         {
           name: "Pearl Millet",
           image: "/images/products/Pearl-millet.webp",
-          description: "High-yield pearl millet for both human and animal consumption.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
-        }
-      ]
+          description:
+            "High-yield pearl millet for both human and animal consumption.",
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
+        },
+      ],
     },
     {
       category: "Cereals & Grains",
       name: "Wheat",
       image: "/images/wheat.jpg",
       description: "Premium wheat grains for flour milling and animal feed.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Cereals & Grains",
       name: "Barley",
       image: "/images/products/barley.webp",
       description: "Quality barley for brewing and animal feed production.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Cereals & Grains",
@@ -149,15 +169,15 @@ function Home() {
           name: "Pishori Rice",
           image: "/images/products/pishori-rice.webp",
           description: "Aromatic Pishori rice with premium cooking qualities.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
         },
         {
           name: "IR Rice Varieties",
           image: "/images/products/ir-rice.webp",
           description: "High-yield IR rice varieties for bulk consumption.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
-        }
-      ]
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
+        },
+      ],
     },
 
     // Pulses & Legumes
@@ -168,28 +188,30 @@ function Home() {
         {
           name: "Red Kidney Beans",
           image: "/images/products/red-kidney-beans.webp",
-          description: "Nutrient-rich red kidney beans with excellent cooking qualities and high protein content.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
+          description:
+            "Nutrient-rich red kidney beans with excellent cooking qualities and high protein content.",
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
         },
         {
           name: "Yellow Beans",
           image: "/images/products/yellow-beans.webp",
           description: "Nutritious yellow beans with high protein content.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
         },
         {
           name: "Black Beans",
           image: "/images/products/black-beans.webp",
           description: "Flavorful black beans ideal for traditional dishes.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
         },
         {
           name: "Rosecoco Beans",
           image: "/images/products/rose-coco.webp",
-          description: "Popular Rosecoco variety with distinctive speckled pattern.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
-        }
-      ]
+          description:
+            "Popular Rosecoco variety with distinctive speckled pattern.",
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
+        },
+      ],
     },
     // Green Grams
     {
@@ -199,43 +221,46 @@ function Home() {
         {
           name: "Green green grams",
           image: "",
-          description: "Nutrient-rich red kidney beans with excellent cooking qualities and high protein content.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
+          description:
+            "Nutrient-rich red kidney beans with excellent cooking qualities and high protein content.",
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
         },
         {
           name: "Nillyon Green grams",
           image: "/images/products/greengrams.webp",
           description: "Nutritious nillyon with high protein content.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
         },
         {
           name: "Green grams Special",
           image: "/images/products/dengu-special.webp",
-          description: "Flavorful special green grams ideal for traditional dishes.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
-        }
-      ]
+          description:
+            "Flavorful special green grams ideal for traditional dishes.",
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
+        },
+      ],
     },
     {
       category: "Pulses & Legumes",
       name: "Cowpeas",
       image: "/images/products/cow-peas.webp",
-      description: "Drought-resistant cowpeas with excellent nutritional value.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      description:
+        "Drought-resistant cowpeas with excellent nutritional value.",
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Pulses & Legumes",
       name: "Lentils",
       image: "/images/products/lentils.webp",
       description: "High-quality lentils for soups and stews.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Pulses & Legumes",
       name: "Pigeon Peas",
       image: "/images/products/Green-Pigeon-Peas.webp",
       description: "Protein-rich pigeon peas for traditional dishes.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
 
     // Flour & Milled Products
@@ -246,37 +271,39 @@ function Home() {
         {
           name: "Sifted Maize Flour",
           image: "/images/products/maize-flour.webp",
-          description: "Finely sifted maize flour with consistent texture, perfect for ugali and other traditional dishes.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
+          description:
+            "Finely sifted maize flour with consistent texture, perfect for ugali and other traditional dishes.",
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
         },
         {
           name: "Unga (Un-sifted)",
           image: "/images/products/unsifted-flour.webp",
           description: "Traditional un-sifted maize flour.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
-        }
-      ]
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
+        },
+      ],
     },
     {
       category: "Flour & Milled Products",
       name: "Sorghum Flour",
       image: "/images/products/sorghum-flour.webp",
       description: "Nutritious sorghum flour for gluten-free baking.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Flour & Milled Products",
       name: "Millet Flour",
       image: "/images/products/millet-flour.webp",
       description: "High-protein millet flour for nutritious baking.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Flour & Milled Products",
       name: "Composite Flour",
       image: "/images/composite-flour.jpg",
-      description: "Nutritious blend of maize and sorghum flour for enhanced taste and nutrition.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      description:
+        "Nutritious blend of maize and sorghum flour for enhanced taste and nutrition.",
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
 
     // Animal Feed & Byproducts
@@ -285,49 +312,53 @@ function Home() {
       name: "Maize Bran",
       image: "/images/products/maize-bran.webp",
       description: "High-fiber maize bran for livestock feed.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Animal Feed & Byproducts",
       name: "Wheat Bran",
       image: "/images/products/wheat-bran-(2).webp",
-      description: "High-fiber wheat bran excellent for livestock feed with good protein content.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      description:
+        "High-fiber wheat bran excellent for livestock feed with good protein content.",
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Animal Feed & Byproducts",
       name: "Cottonseed Cake",
       image: "/images/products/cotton-cake.webp",
-      description: "Protein-rich cottonseed cake ideal for dairy cattle and poultry feed.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      description:
+        "Protein-rich cottonseed cake ideal for dairy cattle and poultry feed.",
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Animal Feed & Byproducts",
       name: "Sunflower Cake",
       image: "/images/products/sunflower_meal_with_hulls_04.webp",
       description: "High-protein sunflower residue for feed.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Animal Feed & Byproducts",
       name: "Soya Meal",
       image: "/images/products/soybean_meal.webp",
       description: "Premium soya meal for livestock nutrition.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Animal Feed & Byproducts",
       name: "Dried Cassava Chips",
       image: "/images/products/dried-cassava.webp",
-      description: "Sun-dried cassava chips with long shelf life, ideal for animal feed and industrial processing.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      description:
+        "Sun-dried cassava chips with long shelf life, ideal for animal feed and industrial processing.",
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Animal Feed & Byproducts",
       name: "Brewer's Spent Grain",
       image: "/images/products/brewers-grain.jpg",
-      description: "Nutritious byproduct from brewing industry for animal feed.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      description:
+        "Nutritious byproduct from brewing industry for animal feed.",
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
 
     // Oil Seeds & Nuts
@@ -338,44 +369,46 @@ function Home() {
         {
           name: "Raw Groundnuts",
           image: "/images/products/RedGroundnuts_1.webp",
-          description: "High-quality groundnuts with excellent oil content and flavor.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
+          description:
+            "High-quality groundnuts with excellent oil content and flavor.",
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
         },
         {
           name: "Roasted Groundnuts",
           image: "/images/products/Crushed-Peanuts.webp",
           description: "Premium roasted groundnuts for direct consumption.",
-          packaging: ["45kg", "50kg", "90kg", "Bulk"]
-        }
-      ]
+          packaging: ["45kg", "50kg", "90kg", "Bulk"],
+        },
+      ],
     },
     {
       category: "Oil Seeds & Nuts",
       name: "Soybeans",
       image: "/images/products/Soybeans.webp",
-      description: "Premium soybeans with high oil and protein content, suitable for oil extraction and animal feed.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      description:
+        "Premium soybeans with high oil and protein content, suitable for oil extraction and animal feed.",
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Oil Seeds & Nuts",
       name: "Sunflower Seeds",
       image: "/images/products/sunflower-seeds.webp",
       description: "High-oil content sunflower seeds.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Oil Seeds & Nuts",
       name: "Simsim (Sesame)",
       image: "/images/products/sesame-seeds.webp",
       description: "Quality sesame seeds for oil and culinary use.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Oil Seeds & Nuts",
       name: "Cottonseed",
       image: "/images/products/cotton-seeds.webp",
       description: "High-quality cottonseed for oil extraction.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
 
     // Fresh Dry Food Add-ons
@@ -383,22 +416,23 @@ function Home() {
       category: "Fresh Dry Food Add-ons",
       name: "Dried Cassava",
       image: "/images/products/dried-cassava.webp",
-      description: "Sun-dried cassava chips with long shelf life, ideal for animal feed and industrial processing.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      description:
+        "Sun-dried cassava chips with long shelf life, ideal for animal feed and industrial processing.",
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Fresh Dry Food Add-ons",
       name: "Dried Arrowroots",
       image: "/images/products/dried-arrowroots.webp",
       description: "Premium dried arrowroots for processing.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
     {
       category: "Fresh Dry Food Add-ons",
       name: "Dried Bananas (Matoke)",
       image: "/images/products/dried bananas.jpeg",
       description: "Sun-dried matoke for flour production.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
     },
 
     // Packaged Branded Products
@@ -406,9 +440,10 @@ function Home() {
       category: "Packaged Branded Products",
       name: "Vittorios Animal Feed",
       image: "/images/animal-feed.jpg",
-      description: "Our premium branded animal feed formulated for optimal livestock nutrition and growth.",
-      packaging: ["45kg", "50kg", "90kg", "Bulk"]
-    }
+      description:
+        "Our premium branded animal feed formulated for optimal livestock nutrition and growth.",
+      packaging: ["45kg", "50kg", "90kg", "Bulk"],
+    },
   ];
 
   // State for filters
@@ -425,57 +460,76 @@ function Home() {
   // Get all unique varieties for the selected category
   const getVarietiesForCategory = () => {
     if (selectedCategory === "All Products") return [];
-    
-    const categoryProducts = products.filter(p => p.category === selectedCategory);
+
+    const categoryProducts = products.filter(
+      (p) => p.category === selectedCategory
+    );
     const varieties = [];
-    
-    categoryProducts.forEach(product => {
+
+    categoryProducts.forEach((product) => {
       if (product.varieties) {
-        varieties.push(...product.varieties.map(v => v.name));
+        varieties.push(...product.varieties.map((v) => v.name));
       }
     });
-    
+
     return [...new Set(varieties)];
   };
 
   // Filter function with useMemo and debugging
   const filteredProducts = useMemo(() => {
-    const filtered = products.filter(product => {
+    const filtered = products.filter((product) => {
       // Category filter
-      const matchesCategory = selectedCategory === "All Products" || product.category === selectedCategory;
-      
+      const matchesCategory =
+        selectedCategory === "All Products" ||
+        product.category === selectedCategory;
+
       // Variety filter - MODIFIED
       let matchesVariety = selectedVariety === "All";
       if (!matchesVariety) {
         if (product.varieties) {
-          matchesVariety = product.varieties.some(v => v.name === selectedVariety);
+          matchesVariety = product.varieties.some(
+            (v) => v.name === selectedVariety
+          );
         } else {
           matchesVariety = false; // Non-variety products are excluded if a specific variety is selected
         }
       }
-      console.log(`Product: ${product.name}, Matches Variety: ${matchesVariety}, Selected Variety: ${selectedVariety}`);
-      
+      console.log(
+        `Product: ${product.name}, Matches Variety: ${matchesVariety}, Selected Variety: ${selectedVariety}`
+      );
+
       // Packaging filter
       let matchesPackaging = selectedPackaging === "All";
       if (!matchesPackaging) {
         if (product.varieties) {
-          matchesPackaging = product.varieties.some(v => v.packaging.includes(selectedPackaging));
+          matchesPackaging = product.varieties.some((v) =>
+            v.packaging.includes(selectedPackaging)
+          );
         } else {
           matchesPackaging = product.packaging.includes(selectedPackaging);
         }
       }
-      
+
       // Search filter
-      const matchesSearch = searchTerm === "" || 
+      const matchesSearch =
+        searchTerm === "" ||
         product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         product.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        (product.description && product.description.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        (product.varieties && product.varieties.some(v => 
-          v.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-          (v.description && v.description.toLowerCase().includes(searchTerm.toLowerCase()))
-        ));
-      
-      return matchesCategory && matchesVariety && matchesPackaging && matchesSearch;
+        (product.description &&
+          product.description
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase())) ||
+        (product.varieties &&
+          product.varieties.some(
+            (v) =>
+              v.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+              (v.description &&
+                v.description.toLowerCase().includes(searchTerm.toLowerCase()))
+          ));
+
+      return (
+        matchesCategory && matchesVariety && matchesPackaging && matchesSearch
+      );
     });
 
     // Debug filtered products
@@ -489,16 +543,16 @@ function Home() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
-      }
-    }
+        staggerChildren: 0.1,
+      },
+    },
   };
 
   const fadeIn = (direction, type, delay, duration) => ({
     hidden: {
-      x: direction === 'left' ? 50 : direction === 'right' ? -50 : 0,
-      y: direction === 'up' ? 50 : direction === 'down' ? -50 : 0,
-      opacity: 0
+      x: direction === "left" ? 50 : direction === "right" ? -50 : 0,
+      y: direction === "up" ? 50 : direction === "down" ? -50 : 0,
+      opacity: 0,
     },
     visible: {
       x: 0,
@@ -508,17 +562,27 @@ function Home() {
         type,
         delay,
         duration,
-        ease: 'easeOut'
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   });
 
   return (
     <div className="bg-charcoalBlack text-neutralSand">
       {/* Hero Section with Logo */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-deepGreen/30 via-charcoalBlack/90 to-charcoalBlack z-0"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80')] bg-cover bg-center opacity-30 z-0"></div>
+        {/* 🎥 Video Background */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-40"
+        >
+          <source src="/videos/hero.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
 
         <div className="container mx-auto px-6 relative z-10 text-center">
           <motion.div
@@ -533,22 +597,21 @@ function Home() {
               transition={{ delay: 0.2, duration: 0.5 }}
               className="flex justify-center mb-6"
             >
-              <img 
-                src="/images/vittorios logo.jpg" 
-                alt="Vittorios Trades Logo" 
-                 className="h-24 md:h-36 w-auto object-contain brightness-150" 
+              <img
+                src="/images/vittorios logo.jpg"
+                alt="Vittorios Trades Logo"
+                className="h-24 md:h-36 w-auto object-contain brightness-150"
               />
             </motion.div>
 
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-goldenWheat to-warmBrown">
               Vittorios Trades
-            </h1> 
+            </h1>
             <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-              Premier logistics and commodity trading solutions across East Africa
+              Premier logistics and commodity trading solutions across East
+              Africa
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-         
-            </div>
+            <div className="flex flex-col sm:flex-row justify-center gap-4"></div>
           </motion.div>
         </div>
 
@@ -577,14 +640,15 @@ function Home() {
                 Your Trusted Trade Partner in East Africa
               </h2>
               <p className="mb-6">
-                Vittorios Trades is a dynamic logistics and trading company specializing in the sourcing,
-                transportation, and distribution of cereals and their byproducts across East Africa.
+                Vittorios Trades is a dynamic logistics and trading company
+                specializing in the sourcing, transportation, and distribution
+                of cereals and their byproducts across East Africa.
               </p>
               <p className="mb-8">
-                With our regional expertise and strong network, we provide efficient, cost-effective, and
-                seamless solutions for commodity trading and supply chain management.
+                With our regional expertise and strong network, we provide
+                efficient, cost-effective, and seamless solutions for commodity
+                trading and supply chain management.
               </p>
-           
             </motion.div>
             <motion.div
               className="lg:w-1/2 relative"
@@ -646,7 +710,9 @@ function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-goldenWheat">Our Core Commodities</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-goldenWheat">
+              Our Core Commodities
+            </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-goldenWheat to-warmBrown mx-auto mb-6"></div>
             <p className="max-w-2xl mx-auto">
               Premium agricultural products sourced across East Africa
@@ -663,7 +729,7 @@ function Home() {
             {commodities.map((item, i) => (
               <motion.div
                 key={i}
-                variants={fadeIn('up', 'spring', i * 0.2, 1)}
+                variants={fadeIn("up", "spring", i * 0.2, 1)}
                 className="relative h-80 rounded-xl overflow-hidden group"
               >
                 <img
@@ -673,10 +739,15 @@ function Home() {
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoalBlack/90 via-transparent to-transparent p-6 flex flex-col justify-end">
-                  <h3 className="text-2xl font-bold text-goldenWheat">{item.name}</h3>
+                  <h3 className="text-2xl font-bold text-goldenWheat">
+                    {item.name}
+                  </h3>
                   <div className="flex flex-wrap gap-2 mt-2">
                     {item.countries.map((c, j) => (
-                      <span key={j} className="bg-goldenWheat/10 text-goldenWheat px-3 py-1 rounded-full text-sm">
+                      <span
+                        key={j}
+                        className="bg-goldenWheat/10 text-goldenWheat px-3 py-1 rounded-full text-sm"
+                      >
                         {c}
                       </span>
                     ))}
@@ -698,10 +769,13 @@ function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-goldenWheat">Our Product Catalogue</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-goldenWheat">
+              Our Product Catalogue
+            </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-goldenWheat to-warmBrown mx-auto mb-6"></div>
             <p className="max-w-2xl mx-auto">
-              Premium agricultural commodities available in various varieties and packaging options
+              Premium agricultural commodities available in various varieties
+              and packaging options
             </p>
           </motion.div>
 
@@ -716,7 +790,9 @@ function Home() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               {/* Search Input */}
               <div>
-                <label className="block mb-2 text-neutralSand/80">Search Products</label>
+                <label className="block mb-2 text-neutralSand/80">
+                  Search Products
+                </label>
                 <div className="relative">
                   <input
                     type="text"
@@ -731,7 +807,9 @@ function Home() {
 
               {/* Category Filter */}
               <div>
-                <label className="block mb-2 text-neutralSand/80">Category</label>
+                <label className="block mb-2 text-neutralSand/80">
+                  Category
+                </label>
                 <select
                   className="w-full bg-charcoalBlack border border-warmBrown/30 rounded px-4 py-3 text-neutralSand outline-none"
                   value={selectedCategory}
@@ -740,14 +818,18 @@ function Home() {
                   }}
                 >
                   {productCategories.map((category, index) => (
-                    <option key={index} value={category}>{category}</option>
+                    <option key={index} value={category}>
+                      {category}
+                    </option>
                   ))}
                 </select>
               </div>
 
               {/* Variety Filter */}
               <div>
-                <label className="block mb-2 text-neutralSand/80">Variety</label>
+                <label className="block mb-2 text-neutralSand/80">
+                  Variety
+                </label>
                 <select
                   className="w-full bg-charcoalBlack border border-warmBrown/30 rounded px-4 py-3 text-neutralSand outline-none"
                   value={selectedVariety}
@@ -756,21 +838,27 @@ function Home() {
                 >
                   <option value="All">All Varieties</option>
                   {getVarietiesForCategory().map((variety, index) => (
-                    <option key={index} value={variety}>{variety}</option>
+                    <option key={index} value={variety}>
+                      {variety}
+                    </option>
                   ))}
                 </select>
               </div>
 
               {/* Packaging Filter */}
               <div>
-                <label className="block mb-2 text-neutralSand/80">Packaging</label>
+                <label className="block mb-2 text-neutralSand/80">
+                  Packaging
+                </label>
                 <select
                   className="w-full bg-charcoalBlack border border-warmBrown/30 rounded px-4 py-3 text-neutralSand outline-none"
                   value={selectedPackaging}
                   onChange={(e) => setSelectedPackaging(e.target.value)}
                 >
                   {packagingOptions.map((option, index) => (
-                    <option key={index} value={option}>{option}</option>
+                    <option key={index} value={option}>
+                      {option}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -782,7 +870,7 @@ function Home() {
                 {selectedCategory !== "All Products" && (
                   <span className="bg-goldenWheat/10 text-goldenWheat px-3 py-1 rounded-full text-sm flex items-center">
                     {selectedCategory}
-                    <button 
+                    <button
                       onClick={() => {
                         setSelectedCategory("All Products");
                       }}
@@ -795,7 +883,7 @@ function Home() {
                 {selectedVariety !== "All" && (
                   <span className="bg-goldenWheat/10 text-goldenWheat px-3 py-1 rounded-full text-sm flex items-center">
                     {selectedVariety}
-                    <button 
+                    <button
                       onClick={() => setSelectedVariety("All")}
                       className="ml-1 text-neutralSand/70 hover:text-neutralSand"
                     >
@@ -806,7 +894,7 @@ function Home() {
                 {selectedPackaging !== "All" && (
                   <span className="bg-goldenWheat/10 text-goldenWheat px-3 py-1 rounded-full text-sm flex items-center">
                     {selectedPackaging}
-                    <button 
+                    <button
                       onClick={() => setSelectedPackaging("All")}
                       className="ml-1 text-neutralSand/70 hover:text-neutralSand"
                     >
@@ -817,7 +905,7 @@ function Home() {
                 {searchTerm && (
                   <span className="bg-goldenWheat/10 text-goldenWheat px-3 py-1 rounded-full text-sm flex items-center">
                     "{searchTerm}"
-                    <button 
+                    <button
                       onClick={() => setSearchTerm("")}
                       className="ml-1 text-neutralSand/70 hover:text-neutralSand"
                     >
@@ -849,49 +937,62 @@ function Home() {
               {filteredProducts.map((product, index) => (
                 <motion.div
                   key={`${product.category}-${product.name}-${index}`}
-                  variants={fadeIn('up', 'spring', index * 0.1, 0.8)}
+                  variants={fadeIn("up", "spring", index * 0.1, 0.8)}
                   className="bg-charcoalBlack/60 border border-goldenWheat/20 rounded-xl overflow-hidden"
                 >
                   {/* Category Header */}
                   <div className="p-4 bg-gradient-to-r from-deepGreen/20 to-charcoalBlack/50 border-b border-goldenWheat/20">
-                    <h3 className="text-xl font-bold text-goldenWheat">{product.category || 'Unknown Category'}</h3>
-                    <p className="text-sm text-neutralSand/80 mt-1">{product.name || 'Unknown Product'}</p>
+                    <h3 className="text-xl font-bold text-goldenWheat">
+                      {product.category || "Unknown Category"}
+                    </h3>
+                    <p className="text-sm text-neutralSand/80 mt-1">
+                      {product.name || "Unknown Product"}
+                    </p>
                   </div>
-                  
+
                   {/* Varieties Grid - MODIFIED */}
                   <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                     {product.varieties ? (
                       product.varieties
-                        .filter(variety => selectedVariety === "All" || variety.name === selectedVariety)
+                        .filter(
+                          (variety) =>
+                            selectedVariety === "All" ||
+                            variety.name === selectedVariety
+                        )
                         .map((variety, vIndex) => (
-                          <div 
+                          <div
                             key={`${variety.name}-${vIndex}`}
                             className="bg-charcoalBlack/40 border border-goldenWheat/10 rounded-lg p-4 hover:shadow-lg hover:shadow-goldenWheat/10 transition-all duration-300"
                           >
                             <div className="relative h-40 overflow-hidden rounded-t-lg mb-3">
                               <img
-                                src={variety.image || '/images/placeholder.jpg'}
-                                alt={variety.name || 'Unknown Variety'}
+                                src={variety.image || "/images/placeholder.jpg"}
+                                alt={variety.name || "Unknown Variety"}
                                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                                 loading="lazy"
                               />
                               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-charcoalBlack to-transparent p-2">
                                 <span className="bg-goldenWheat/80 text-xs text-charcoalBlack px-2 py-1 rounded">
-                                  {variety.name || 'Unknown Variety'}
+                                  {variety.name || "Unknown Variety"}
                                 </span>
                               </div>
                             </div>
-                            <p className="text-neutralSand/80 mb-3 text-sm">{variety.description || 'No description available'}</p>
+                            <p className="text-neutralSand/80 mb-3 text-sm">
+                              {variety.description ||
+                                "No description available"}
+                            </p>
                             <div className="mb-3">
-                              <h4 className="text-xs font-semibold mb-1 text-neutralSand">Packaging:</h4>
+                              <h4 className="text-xs font-semibold mb-1 text-neutralSand">
+                                Packaging:
+                              </h4>
                               <div className="flex flex-wrap gap-1">
                                 {(variety.packaging || []).map((pkg, i) => (
                                   <span
                                     key={i}
                                     className={`px-2 py-0.5 rounded text-xs ${
-                                      selectedPackaging === pkg 
-                                        ? 'bg-goldenWheat text-charcoalBlack' 
-                                        : 'bg-goldenWheat/10 text-goldenWheat'
+                                      selectedPackaging === pkg
+                                        ? "bg-goldenWheat text-charcoalBlack"
+                                        : "bg-goldenWheat/10 text-goldenWheat"
                                     }`}
                                   >
                                     {pkg}
@@ -899,7 +1000,6 @@ function Home() {
                                 ))}
                               </div>
                             </div>
-                         
                           </div>
                         ))
                     ) : (
@@ -908,29 +1008,34 @@ function Home() {
                         <div className="flex flex-col md:flex-row gap-4">
                           <div className="relative h-40 w-full md:w-1/3 overflow-hidden rounded-lg">
                             <img
-                              src={product.image || '/images/placeholder.jpg'}
-                              alt={product.name || 'Unknown Product'}
+                              src={product.image || "/images/placeholder.jpg"}
+                              alt={product.name || "Unknown Product"}
                               className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                               loading="lazy"
                             />
                             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-charcoalBlack to-transparent p-2">
                               <span className="bg-goldenWheat/80 text-xs text-charcoalBlack px-2 py-1 rounded">
-                                {product.name || 'Unknown Product'}
+                                {product.name || "Unknown Product"}
                               </span>
                             </div>
                           </div>
                           <div className="flex-1">
-                            <p className="text-neutralSand/80 mb-3 text-sm">{product.description || 'No description available'}</p>
+                            <p className="text-neutralSand/80 mb-3 text-sm">
+                              {product.description ||
+                                "No description available"}
+                            </p>
                             <div className="mb-3">
-                              <h4 className="text-xs font-semibold mb-1 text-neutralSand">Packaging:</h4>
+                              <h4 className="text-xs font-semibold mb-1 text-neutralSand">
+                                Packaging:
+                              </h4>
                               <div className="flex flex-wrap gap-1">
                                 {(product.packaging || []).map((pkg, i) => (
                                   <span
                                     key={i}
                                     className={`px-2 py-0.5 rounded text-xs ${
-                                      selectedPackaging === pkg 
-                                        ? 'bg-goldenWheat text-charcoalBlack' 
-                                        : 'bg-goldenWheat/10 text-goldenWheat'
+                                      selectedPackaging === pkg
+                                        ? "bg-goldenWheat text-charcoalBlack"
+                                        : "bg-goldenWheat/10 text-goldenWheat"
                                     }`}
                                   >
                                     {pkg}
@@ -938,7 +1043,6 @@ function Home() {
                                 ))}
                               </div>
                             </div>
-                            
                           </div>
                         </div>
                       </div>
@@ -957,8 +1061,12 @@ function Home() {
               <div className="text-5xl mb-4 text-goldenWheat/30">
                 <FaSearch />
               </div>
-              <h3 className="text-xl font-medium text-neutralSand mb-2">No products found</h3>
-              <p className="text-neutralSand/60 mb-4">Try adjusting your search or filter criteria</p>
+              <h3 className="text-xl font-medium text-neutralSand mb-2">
+                No products found
+              </h3>
+              <p className="text-neutralSand/60 mb-4">
+                Try adjusting your search or filter criteria
+              </p>
               <button
                 onClick={() => {
                   setSelectedCategory("All Products");
@@ -985,10 +1093,13 @@ function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-goldenWheat">Our Core Services</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-goldenWheat">
+              Our Core Services
+            </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-goldenWheat to-warmBrown mx-auto mb-6"></div>
             <p className="max-w-2xl mx-auto">
-              We provide comprehensive solutions tailored to your commodity trading and logistics needs
+              We provide comprehensive solutions tailored to your commodity
+              trading and logistics needs
             </p>
           </motion.div>
 
@@ -1003,7 +1114,9 @@ function Home() {
                 className={`bg-gradient-to-br ${service.bg} p-8 rounded-xl border border-warmBrown/20 hover:border-goldenWheat/30 transition-all duration-300`}
               >
                 <div className="mb-4">{service.icon}</div>
-                <h3 className="text-xl font-bold mb-3 text-goldenWheat">{service.title}</h3>
+                <h3 className="text-xl font-bold mb-3 text-goldenWheat">
+                  {service.title}
+                </h3>
                 <p className="mb-4">{service.description}</p>
                 <motion.button
                   whileHover={{ x: 5 }}
@@ -1027,7 +1140,9 @@ function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-goldenWheat">Our Process</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-goldenWheat">
+              Our Process
+            </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-goldenWheat to-warmBrown mx-auto mb-6"></div>
             <p className="max-w-2xl mx-auto">
               Streamlined operations from farm to market
@@ -1040,9 +1155,21 @@ function Home() {
 
             <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 z-10">
               {[
-                { icon: <FaSearch className="text-2xl" />, title: "Sourcing", desc: "Partner with local farmers" },
-                { icon: <FaWarehouse className="text-2xl" />, title: "Storage", desc: "Climate-controlled facilities" },
-                { icon: <FaTruck className="text-2xl" />, title: "Logistics", desc: "Regional distribution" }
+                {
+                  icon: <FaSearch className="text-2xl" />,
+                  title: "Sourcing",
+                  desc: "Partner with local farmers",
+                },
+                {
+                  icon: <FaWarehouse className="text-2xl" />,
+                  title: "Storage",
+                  desc: "Climate-controlled facilities",
+                },
+                {
+                  icon: <FaTruck className="text-2xl" />,
+                  title: "Logistics",
+                  desc: "Regional distribution",
+                },
               ].map((step, i) => (
                 <motion.div
                   key={i}
@@ -1077,7 +1204,9 @@ function Home() {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="text-4xl md:text-5xl font-bold mb-2 text-goldenWheat">{stat.value}</div>
+                <div className="text-4xl md:text-5xl font-bold mb-2 text-goldenWheat">
+                  {stat.value}
+                </div>
                 <div className="text-neutralSand">{stat.label}</div>
               </motion.div>
             ))}
@@ -1091,14 +1220,14 @@ function Home() {
 
         <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Streamline Your East African Trade Operations?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Ready to Streamline Your East African Trade Operations?
+            </h2>
             <p className="text-xl mb-8">
-              Partner with Vittorios Trades for reliable, efficient, and cost-effective logistics and commodity trading solutions.
+              Partner with Vittorios Trades for reliable, efficient, and
+              cost-effective logistics and commodity trading solutions.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-         
-          
-            </div>
+            <div className="flex flex-col sm:flex-row justify-center gap-4"></div>
           </div>
         </div>
       </section>

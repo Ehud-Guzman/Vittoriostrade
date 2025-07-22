@@ -17,10 +17,19 @@ const HeroSection = () => {
   return (
     <section className="relative h-screen overflow-hidden">
       {/* Parallax Background (Grain Truck at Border) */}
-      <motion.div 
-        style={{ y: useTransform(scrollYProgress, [0, 1], [0, 200]) }}
-        className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80')] bg-cover bg-center"
-      />
+          {/* 🎥 Background video with parallax scroll */}
+      <motion.video
+        
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+      >
+        <source src="/videos/hero02.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </motion.video>
       
       {/* Pulsing Gradient Overlay */}
       <motion.div
