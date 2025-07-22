@@ -116,16 +116,29 @@ const handleSubmit = async (e) => {
       )}
 
       {/* ===== 1. HERO SECTION ===== */}
-      <section className="relative h-[70vh] flex items-center justify-center bg-gradient-to-br from-deepGreen/30 to-charcoalBlack overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80')] bg-cover bg-center opacity-20"/>
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoalBlack via-transparent to-transparent z-0"/>
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="container mx-auto px-6 text-center relative z-10"
-        >
+     <section className="relative h-[70vh] flex items-center justify-center bg-black overflow-hidden">
+  {/* 🎬 Fullscreen Background Video */}
+<video
+  autoPlay
+  loop
+  muted
+  playsInline
+  className="absolute inset-0 w-auto h-full min-w-full min-h-full object-cover z-0"
+>
+    <source src="/videos/hero03.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  {/* 🌓 Overlay for contrast */}
+  <div className="absolute inset-0 bg-gradient-to-t from-charcoalBlack via-transparent to-transparent z-10" />
+
+  {/* 🧠 Hero Content */}
+  <motion.div
+    initial={{ opacity: 0, y: 70 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="container mx-auto px-6 text-center relative z-20"
+  >
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-goldenWheat to-warmBrown">
               Let's Connect & Grow Together
