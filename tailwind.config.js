@@ -6,45 +6,60 @@ export default {
   ],
   theme: {
     extend: {
-      // Custom colors matching tailwind.config.js for consistency
       colors: {
-        deepGreen: '#14532D',
-        goldenWheat: '#D4AF37',
-        warmBrown: '#8B5E34',
-        neutralSand: '#F5F0E1',
+        // Vittorios brand palette — terracotta/sienna earth tones
+        brand: {
+          50:  '#FDF6F0',
+          100: '#FAE8D8',
+          200: '#F4CDAC',
+          300: '#ECAD7A',
+          400: '#E08A4A',
+          500: '#C4622D',
+          600: '#A34E22',
+          700: '#833D19',
+          800: '#622D12',
+          900: '#42200D',
+        },
+        // Clean neutral scale
+        earth: {
+          50:  '#FAFAFA',
+          100: '#F4F4F5',
+          200: '#E4E4E7',
+          300: '#D4D4D8',
+          400: '#A1A1AA',
+          500: '#71717A',
+          600: '#52525B',
+          700: '#3F3F46',
+          800: '#27272A',
+          900: '#18181B',
+        },
+        cream: '#FFFFFF',
+        grain: '#C4622D',
+        // Legacy aliases kept for backward compatibility
+        deepGreen:     '#14532D',
+        goldenWheat:   '#C4622D',
+        warmBrown:     '#A34E22',
+        neutralSand:   '#F5F0E1',
         charcoalBlack: '#121212',
       },
-      // Typography extensions for consistent headings and text
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Playfair Display', 'Georgia', 'serif'],
+        sans:    ['DM Sans', 'system-ui', 'sans-serif'],
+        body:    ['DM Sans', 'system-ui', 'sans-serif'],
       },
-      fontSize: {
-        'heading-1': ['clamp(2.5rem, 5vw, 4rem)', { lineHeight: '1.2' }],
-        'heading-2': ['clamp(2rem, 4vw, 3rem)', { lineHeight: '1.2' }],
-        'heading-3': ['clamp(1.5rem, 3vw, 2rem)', { lineHeight: '1.2' }],
-        base: ['clamp(1rem, 2vw, 1.125rem)', { lineHeight: '1.6' }],
+      boxShadow: {
+        'warm':    '0 4px 24px rgba(0, 0, 0, 0.07)',
+        'warm-lg': '0 8px 40px rgba(0, 0, 0, 0.11)',
+        'brand':   '0 4px 24px rgba(196, 98, 45, 0.18)',
       },
-      // Spacing for consistent padding and margins
       spacing: {
         section: '5rem',
-        card: '2rem',
-        gap: '1.5rem',
+        card:    '2rem',
       },
-      // Border radius for cards and buttons
       borderRadius: {
-        card: '1rem',
+        card:   '1rem',
         button: '9999px',
       },
-    },
-  },
-  // Enable backdrop-filter utilities
-  corePlugins: {
-    backdropFilter: true,
-  },
-  // Add responsive and hover variants for backdrop-filter
-  variants: {
-    extend: {
-      backdropFilter: ['responsive', 'hover'],
     },
   },
   plugins: [],

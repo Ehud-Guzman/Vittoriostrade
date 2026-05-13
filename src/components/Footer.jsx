@@ -1,221 +1,194 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import emailjs from "@emailjs/browser";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const [subEmail, setSubEmail]   = useState("");
+  const [subStatus, setSubStatus] = useState(null); // null | "sending" | "success" | "error"
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    if (!subEmail) return;
+    setSubStatus("sending");
+    try {
+      await emailjs.send(
+        "service_glh0yoh",
+        "template_8919t07",
+        { from_name: "Newsletter Subscriber", from_email: subEmail, phone: "", subject: "Newsletter Subscription", message: `New newsletter subscription from: ${subEmail}` },
+        "mu8JNmKu-gMTErqQ2"
+      );
+      setSubStatus("success");
+      setSubEmail("");
+    } catch {
+      setSubStatus("error");
+    }
+  };
 
   const footerLinks = [
-    { name: "Home", path: "/" },
-    { name: "Services", path: "/services" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
-    { name: "Privacy Policy", path: "/privacy" },
-    { name: "Terms of Service", path: "/terms" }
+    { name: 'Home',     path: '/' },
+    { name: 'Services', path: '/services' },
+    { name: 'About',    path: '/about' },
+    { name: 'Contact',  path: '/contact' },
   ];
 
   const socialLinks = [
-    { icon: <FaFacebook className="text-xl" />, url: "#" },
-    { icon: <FaTwitter className="text-xl" />, url: "#" },
-    { icon: <FaInstagram className="text-xl" />, url: "#" },
-    { icon: <FaLinkedin className="text-xl" />, url: "#" }
+    { icon: <FaFacebook className="text-lg" />,  url: '#', label: 'Facebook' },
+    { icon: <FaTwitter className="text-lg" />,   url: '#', label: 'Twitter' },
+    { icon: <FaInstagram className="text-lg" />, url: '#', label: 'Instagram' },
+    { icon: <FaLinkedin className="text-lg" />,  url: '#', label: 'LinkedIn' },
   ];
 
   const contactInfo = [
-    { icon: <FaMapMarkerAlt />, text: "P.O. Box 41, Bungoma" },
-    { icon: <FaPhone />, text: "+254 799031449" },
-    { icon: <FaPhone />, text: "+250 795585322" },
-    { icon: <FaPhone />, text: "+256 764216176" },
-    { icon: <FaEnvelope />, text: "vittoriostrades@gmail.com" }
+    { icon: <FaMapMarkerAlt />, text: 'P.O. Box 41, Bungoma' },
+    { icon: <FaPhone />,        text: '+254 799 031 449' },
+    { icon: <FaPhone />,        text: '+250 795 585 322' },
+    { icon: <FaPhone />,        text: '+256 764 216 176' },
+    { icon: <FaEnvelope />,     text: 'vittoriostrades@gmail.com' },
   ];
 
   return (
     <motion.footer
-      className="relative overflow-hidden"
+      className="bg-earth-50 border-t border-earth-200 text-earth-600"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
+      transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      {/* Decorative elements */}
-      <div className="absolute inset-0 bg-charcoalBlack opacity-95 z-0"></div>
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-deepGreen via-goldenWheat to-warmBrown z-10"></div>
+      {/* Top accent bar */}
+      <div className="h-1 bg-gradient-to-r from-brand-400 via-brand-500 to-brand-700" />
 
-      {/* Main footer content */}
-      <div className="relative z-10 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto">
-          {/* Footer grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      <div className="container mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-14">
 
-            {/* Brand info */}
-            <motion.div
-              whileHover={{ y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="flex flex-col items-center md:items-start"
-            >
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-deepGreen to-warmBrown flex items-center justify-center mr-3">
-                  <span className="text-goldenWheat font-bold text-2xl">V</span>
-                </div>
-                <h2 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-goldenWheat to-warmBrown">
-                  Vittorios Trades
-                </h2>
-              </div>
-              <p className="text-neutralSand text-sm text-center md:text-left">
-                Premium trade services with unmatched quality and professionalism. Building trust through excellence since 2025.
-              </p>
-            </motion.div>
-
-            {/* Quick links */}
-            <motion.div
-              whileHover={{ y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="flex flex-col items-center md:items-start"
-            >
-              <h3 className="text-lg font-semibold text-goldenWheat mb-4 border-b border-warmBrown pb-2 w-full text-center md:text-left">
-                Quick Links
-              </h3>
-              <ul className="space-y-2">
-                {footerLinks.map((link, index) => (
-                  <motion.li
-                    key={index}
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <Link
-                      to={link.path}
-                      className="text-neutralSand hover:text-goldenWheat text-sm transition-colors duration-300 flex items-center"
-                    >
-                      <span className="w-2 h-2 bg-goldenWheat rounded-full mr-2"></span>
-                      {link.name}
-                    </Link>
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Contact info */}
-            <motion.div
-              whileHover={{ y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="flex flex-col items-center md:items-start"
-            >
-              <h3 className="text-lg font-semibold text-goldenWheat mb-4 border-b border-warmBrown pb-2 w-full text-center md:text-left">
-                Contact Us
-              </h3>
-              <ul className="space-y-3">
-                {contactInfo.map((item, index) => (
-                  <motion.li
-                    key={index}
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                    className="flex items-start"
-                  >
-                    <span className="text-goldenWheat mr-3 mt-1">{item.icon}</span>
-                    <span className="text-neutralSand text-sm">{item.text}</span>
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Newsletter */}
-            <motion.div
-              whileHover={{ y: -5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-              className="flex flex-col items-center md:items-start"
-            >
-              <h3 className="text-lg font-semibold text-goldenWheat mb-4 border-b border-warmBrown pb-2 w-full text-center md:text-left">
-                Newsletter
-              </h3>
-              <p className="text-neutralSand text-sm mb-4 text-center md:text-left">
-                Subscribe to our newsletter for the latest updates and offers.
-              </p>
-              <div className="w-full">
-                <div className="relative">
-                  <input
-                    type="email"
-                    placeholder="Your email address"
-                    className="w-full px-4 py-3 rounded-lg bg-charcoalBlack border border-warmBrown text-neutralSand placeholder-neutralSand placeholder-opacity-50 focus:outline-none focus:ring-2 focus:ring-goldenWheat"
-                  />
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 px-4 py-1 bg-gradient-to-r from-goldenWheat to-warmBrown text-charcoalBlack rounded-md font-medium text-sm"
-                  >
-                    Subscribe
-                  </motion.button>
-                </div>
-                <div className="flex justify-center md:justify-start space-x-4 mt-6">
-                  {socialLinks.map((social, index) => (
-                    <motion.a
-                      key={index}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ y: -5, scale: 1.1, color: "#D4AF37" }}
-                      whileTap={{ scale: 0.9 }}
-                      className="text-neutralSand hover:text-goldenWheat transition-colors duration-300"
-                    >
-                      {social.icon}
-                    </motion.a>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Copyright section */}
-          <div className="pt-8 mt-8 border-t border-warmBrown border-opacity-30">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-neutralSand text-sm mb-4 md:mb-0">
-                © {currentYear} Vittorios Trades. All rights reserved.
-              </p>
-              <div className="flex space-x-6">
-                <Link to="/privacy" className="text-neutralSand hover:text-goldenWheat text-sm transition-colors duration-300">
-                  Privacy Policy
-                </Link>
-                <Link to="/terms" className="text-neutralSand hover:text-goldenWheat text-sm transition-colors duration-300">
-                  Terms of Service
-                </Link>
-                <Link to="/sitemap" className="text-neutralSand hover:text-goldenWheat text-sm transition-colors duration-300">
-                  Sitemap
-                </Link>
-              </div>
+          {/* Brand */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <img
+                src="/images/vittorios logo.jpg"
+                alt="Vittorios Trades"
+                className="h-10 w-auto object-contain rounded"
+              />
+              <span className="text-xl font-display font-bold text-earth-900 tracking-tight">
+                Vittorios Trades
+              </span>
+            </div>
+            <p className="text-sm leading-relaxed text-earth-500 mb-5">
+              Premier logistics and commodity trading across East Africa. Building lasting partnerships through reliability and excellence.
+            </p>
+            <div className="flex gap-3">
+              {socialLinks.map((s, i) => (
+                <a
+                  key={i}
+                  href={s.url}
+                  aria-label={s.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 rounded-full bg-earth-200 flex items-center justify-center text-earth-500 hover:bg-brand-500 hover:text-white transition-all duration-200"
+                >
+                  {s.icon}
+                </a>
+              ))}
             </div>
           </div>
 
-         {/* Creator credit */}
-<div className="pt-6 border-t border-warmBrown border-opacity-30">
-  <p className="text-neutralSand text-xs text-center mb-4 md:mb-0">
-    Website Created by{' '}
-    <a 
-      href="https://glimmerink.netlify.app" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="font-semibold hover:text-goldenWheat"
-    >
-      GlimmerInk Creations
-    </a>{' '}
-    |{' '}
-    <a 
-      href="tel:+254746527253" 
-      className="hover:text-goldenWheat"
-    >
-      +254 746 527 253
-    </a>{' '}
-    |{' '}
-    <a 
-      href="https://wa.me/254746527253" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="hover:text-goldenWheat"
-    >
-      WhatsApp
-    </a>
-  </p>
-</div>
+          {/* Quick links */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-earth-400 mb-5">
+              Quick Links
+            </h3>
+            <ul className="space-y-2.5">
+              {footerLinks.map((link, i) => (
+                <li key={i}>
+                  <Link
+                    to={link.path}
+                    className="text-sm text-earth-500 hover:text-brand-500 transition-colors duration-200"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-earth-400 mb-5">
+              Contact Us
+            </h3>
+            <ul className="space-y-3">
+              {contactInfo.map((item, i) => (
+                <li key={i} className="flex items-start gap-3">
+                  <span className="text-brand-500 mt-0.5 shrink-0">{item.icon}</span>
+                  <span className="text-sm text-earth-500">{item.text}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-earth-400 mb-5">
+              Stay Updated
+            </h3>
+            <p className="text-sm text-earth-500 mb-4">
+              Subscribe for market updates and trade insights.
+            </p>
+
+            {subStatus === "success" ? (
+              <p className="text-sm text-green-700 bg-green-50 border border-green-200 rounded-lg px-4 py-3">
+                Subscribed! We'll be in touch.
+              </p>
+            ) : (
+              <form onSubmit={handleSubscribe} className="relative">
+                <input
+                  type="email"
+                  required
+                  placeholder="Your email address"
+                  value={subEmail}
+                  onChange={(e) => setSubEmail(e.target.value)}
+                  className="w-full px-4 py-3 rounded-lg bg-white border border-earth-200 text-earth-800 placeholder-earth-400 text-sm focus:outline-none focus:ring-2 focus:ring-brand-200 focus:border-brand-400 transition"
+                />
+                <button
+                  type="submit"
+                  disabled={subStatus === "sending"}
+                  className="absolute right-2 top-1/2 -translate-y-1/2 px-4 py-1.5 bg-brand-500 hover:bg-brand-600 text-white rounded-md text-xs font-semibold transition-colors disabled:opacity-60"
+                >
+                  {subStatus === "sending" ? "…" : "Go"}
+                </button>
+              </form>
+            )}
+            {subStatus === "error" && (
+              <p className="text-xs text-red-600 mt-2">Failed to subscribe. Try again.</p>
+            )}
+          </div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="pt-8 border-t border-earth-200 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs text-earth-400">
+            © {currentYear} Vittorios Trades. All rights reserved.
+          </p>
+          <div className="flex gap-6">
+            <Link to="/privacy" className="text-xs text-earth-400 hover:text-brand-500 transition-colors">Privacy Policy</Link>
+            <Link to="/terms"   className="text-xs text-earth-400 hover:text-brand-500 transition-colors">Terms of Service</Link>
+          </div>
+        </div>
+
+        {/* Creator credit */}
+        <div className="mt-6 pt-6 border-t border-earth-200 text-center">
+          <p className="text-xs text-earth-400">
+            Website by{' '}
+            <a href="https://glimmerink.co.ke" target="_blank" rel="noopener noreferrer" className="text-earth-500 hover:text-brand-500 transition-colors font-medium">
+              GlimmerInk Creations
+            </a>
+            {' '}·{' '}
+            <a href="https://wa.me/254746527253" target="_blank" rel="noopener noreferrer" className="text-earth-500 hover:text-brand-500 transition-colors">WhatsApp</a>
+          </p>
         </div>
       </div>
     </motion.footer>
